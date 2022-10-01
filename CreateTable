@@ -1,0 +1,32 @@
+import mysql.connector
+
+
+mydb = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "01.Ahmet",
+
+)
+
+mycursor=mydb.cursor()
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+
+mydb = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "01.Ahmet",
+    database = "mydatabase"
+)
+
+mycursor=mydb.cursor()
+
+mycursor = mydb.cursor()
+
+
+mycursor.execute("CREATE TABLE class (ID INT, Name VARCHAR(45),TeacherID INT)")
+mycursor.execute("CREATE TABLE lesson (ID INT, Name VARCHAR(45))")
+mycursor.execute("CREATE TABLE student (ID INT, StudentNumber INT ,Name VARCHAR(45),Surname VARCHAR(45),Birthdate DATE,Gender VARCHAR(1),ClassID INT)")
+mycursor.execute("CREATE TABLE teacher (ID INT, Branch VARCHAR(45) ,Name VARCHAR(45),Surname VARCHAR(45),Birthdate DATE,Gender VARCHAR(1))")
